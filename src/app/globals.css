@@ -1,8 +1,40 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --conteiner: #434242;
+  --foreground-conteiner: #1a1a1a;
 }
 
+.pointer {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pointer:hover {
+  text-decoration: underline;
+}
+
+.pointer_conteiner {
+  position: relative;
+  cursor: pointer;
+}
+
+.pointer_conteiner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2em; 
+  background-color: var(--foreground);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.pointer_conteiner:hover::after {
+  transform: scaleX(1);
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

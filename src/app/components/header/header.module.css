@@ -1,0 +1,14 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--conteiner);
+  padding: 1em 0.5em;
+  height: 4em;
+  border-bottom: solid 0.2em var(--foreground);
+}
+
+.leftcase {
+    padding-right: 0.5em;
+    border-right: solid 0.2em var(--foreground);
+}
