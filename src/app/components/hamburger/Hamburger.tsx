@@ -6,7 +6,7 @@ import styles from "./hamburger.module.css"
 import { SVGArrow } from "@/app/assets/svg/SVGArrow";
 import { useRouter } from "next/navigation";
 export default function Hamburger(){
-    const router = useRouter();
+    const router = useRouter()
     const [drop, setDrop] = useState(false)
 
     const manageDrop = () => {
@@ -16,7 +16,13 @@ export default function Hamburger(){
     const manageOpc = (index:number) => {
         switch(index) {
             case 0:
-                router.replace("./")
+                router.push("./")
+                break
+            case 1:
+                router.push("./#Miembros")
+                break
+            case 2: 
+                router.push('./#Objetivos')
                 break
             default:
                 alert(index)
