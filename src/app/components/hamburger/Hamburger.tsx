@@ -16,13 +16,13 @@ export default function Hamburger(){
     const manageOpc = (index:number) => {
         switch(index) {
             case 0:
-                router.push("./")
-                break
-            case 1:
                 router.push("./#Miembros")
                 break
+            case 1:
+                router.push("./#Objetivos")
+                break
             case 2: 
-                router.push('./#Objetivos')
+                router.push('./#')
                 break
             default:
                 alert(index)

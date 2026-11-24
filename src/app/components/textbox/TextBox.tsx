@@ -7,11 +7,11 @@ interface TextBox {
 export default function TextBox({Title, Content, list = false}:TextBox){
     return(
         <>
-            {Title? <h2 className={styles.title}>{Title}</h2> : null}
+            {Title? <h2 className={`${styles.title} title`}>{Title}</h2> : null}
             {list?
-                <li className={styles.content}>{Content}</li>
+                <p className={`${styles.content} vin`}>{Content}</p>
             :
-                <p className={styles.content}>{Content}</p>
+                <p className={`${styles.content} ${styles.text}`}>{Content}</p>
             }
         </>
     )

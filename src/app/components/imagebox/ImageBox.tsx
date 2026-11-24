@@ -1,25 +1,25 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import styles from "./imagebox.module.css";
 
 interface ImageBoxProps {
-  title: string;
-  src: string;
-  alt: string;
+  title?: string;
+  src: string | StaticImageData;
+  alt?: string;
 }
 
-export default function ImageBox({ title, src, alt }: ImageBoxProps) {
+export default function ImageBox({
+  title,
+  src,
+  alt = "",
+}: ImageBoxProps) {
   return (
-    <figure className="flex flex-col gap-2">
-      <h2>{title}</h2>
-
-      <div className="relative w-full aspect-video overflow-hidden rounded-lg">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover" 
-        />
-      </div>
+    <figure className={styles.container}>
+      <h2 className={styles.title}>{title}</h2>
+      <Image
+        src={src}
+        alt={alt}
+        className={styles.image}
+      />
     </figure>
   );
 }
